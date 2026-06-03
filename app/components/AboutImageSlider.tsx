@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const images = [
-  { src: "/about-images/image-company.png", alt: "学内カンパニー" },
-  { src: "/about-images/image-dev.png", alt: "開発" },
-  { src: "/about-images/image-study.png", alt: "学習" },
+  { src: "/about-images/image-company.webp", alt: "学内カンパニー" },
+  { src: "/about-images/image-dev.webp", alt: "開発" },
+  { src: "/about-images/image-study.webp", alt: "学習" },
 ];
 
 export default function AboutImageSlider() {
