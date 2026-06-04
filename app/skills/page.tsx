@@ -3,16 +3,18 @@ import { profile } from "@/app/lib/profile";
 import type { IconType } from "react-icons";
 import {
   SiReact, SiNextdotjs, SiHtml5, SiPython, SiC,
-  SiNumpy, SiPandas, SiTensorflow, SiJupyter,
-  SiGithub, SiVscodium, SiLinux, SiVercel, SiRender,
-  SiNotion, SiClaude,
+  SiDjango, SiNumpy, SiPandas, SiTensorflow, SiJupyter,
+  SiGithub, SiLinux, SiVercel, SiRender,
+  SiNotion, SiClaude, SiPostgresql, SiScikitlearn,
 } from "react-icons/si";
+import { TbBrandVscode } from "react-icons/tb";
 
 const skillColors: Record<string, string> = {
   "React": "#61DAFB",
   "Next.js": "#000000",
   "HTML / CSS": "#E34F26",
   "Python": "#3776AB",
+  "Django": "#092E20",
   "C言語": "#00599C",
   "NumPy": "#4DABCF",
   "Pandas": "#E70488",
@@ -20,11 +22,15 @@ const skillColors: Record<string, string> = {
   "Jupyter Notebook": "#F37626",
   "GitHub": "#181717",
   "VSCode": "#007ACC",
+
   "WSL": "#FCC624",
   "Vercel": "#000000",
   "Render": "#46E3B7",
   "Notion": "#000000",
   "Claude Code": "#D97757",
+  "scikit-learn": "#F7931E",
+  "Django REST Framework": "#092E20",
+  "PostgreSQL": "#4169E1",
 };
 
 const skillIcons: Record<string, IconType> = {
@@ -32,23 +38,49 @@ const skillIcons: Record<string, IconType> = {
   "Next.js": SiNextdotjs,
   "HTML / CSS": SiHtml5,
   "Python": SiPython,
+  "Django": SiDjango,
   "C言語": SiC,
   "NumPy": SiNumpy,
   "Pandas": SiPandas,
   "TensorFlow": SiTensorflow,
   "Jupyter Notebook": SiJupyter,
   "GitHub": SiGithub,
-  "VSCode": SiVscodium,
+  "VSCode": TbBrandVscode,
   "WSL": SiLinux,
   "Vercel": SiVercel,
   "Render": SiRender,
   "Notion": SiNotion,
   "Claude Code": SiClaude,
+  "Django REST Framework": SiDjango,
+  "PostgreSQL": SiPostgresql,
+  "scikit-learn": SiScikitlearn,
 };
 
 export const metadata: Metadata = {
   title: "Skills",
 };
+
+function SkillTags({ items, textClass }: { items: string[]; textClass: string }) {
+  const withIcons = items.filter((s) => skillIcons[s]);
+  const withoutIcons = items.filter((s) => !skillIcons[s]);
+  const sorted = [...withIcons, ...withoutIcons];
+  return (
+    <>
+      {sorted.map((skill) => {
+        const Icon = skillIcons[skill];
+        return (
+          <span
+            key={skill}
+            className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-200 ${textClass}`}
+          >
+            {Icon && <Icon size={16} color={skillColors[skill]} className="shrink-0" />}
+            {skill}
+          </span>
+        );
+      })}
+    </>
+  );
+}
 
 export default function SkillsPage() {
   return (
@@ -58,25 +90,32 @@ export default function SkillsPage() {
       <div className="space-y-10">
         {profile.skills.map((group, i) => (
           <div key={group.category} className={`fade-in-${i + 1}`}>
-            <h2 className="text-xs text-gray-400 tracking-widest uppercase mb-4">
+            <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-300">
               {group.category}
             </h2>
             <div className="flex flex-wrap gap-2">
-              {group.items.map((skill) => {
-                const Icon = skillIcons[skill];
-                return (
-                  <span
-                    key={skill}
-                    className="inline-flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-200 text-gray-700"
-                  >
-                    {skill}
-                    {Icon && <Icon size={16} color={skillColors[skill]} className="shrink-0" />}
-                  </span>
-                );
-              })}
+              <SkillTags items={group.items} textClass="text-gray-700" />
             </div>
+            {group.description && (
+              <p className="mt-4 text-sm text-gray-500 leading-relaxed whitespace-pre-line">
+                {group.description}
+              </p>
+            )}
           </div>
         ))}
+
+        {/* Currently Learning */}
+        <div className={`fade-in-${profile.skills.length + 1}`}>
+          <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-300">
+            現在学習中
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            <SkillTags items={profile.currentlyLearning} textClass="text-gray-500" />
+          </div>
+          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+            現在は、React / Next.js と Django REST Framework を組み合わせたAPI連携型のWebアプリ開発を重点的に学習しています。{"\n"}今後は、認証機能、DB設計、API設計、データ分析、推薦システムなどを深めていきたいと考えています。
+          </p>
+        </div>
       </div>
     </div>
   );

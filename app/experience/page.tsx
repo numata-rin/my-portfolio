@@ -10,8 +10,8 @@ export default function ExperiencePage() {
     <div className="max-w-3xl mx-auto px-6 py-20">
       <h1 className="fade-in text-3xl font-bold mb-12">Experience</h1>
 
-      <section className="fade-in-1 mb-14">
-        <h2 className="text-xs text-gray-400 tracking-widest uppercase mb-6">
+      <section className="fade-in-1 mb-20">
+        <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-6 pb-3 border-b border-gray-300">
           学歴
         </h2>
         <div className="space-y-6">
@@ -28,8 +28,8 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="fade-in-2 mb-14">
-        <h2 className="text-xs text-gray-400 tracking-widest uppercase mb-6">
+      <section className="fade-in-2 mb-20">
+        <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-6 pb-3 border-b border-gray-300">
           活動歴
         </h2>
         <div className="space-y-6">
@@ -45,7 +45,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="fade-in-3">
-        <h2 className="text-xs text-gray-400 tracking-widest uppercase mb-6">
+        <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-6 pb-3 border-b border-gray-300">
           資格
         </h2>
         <ul className="space-y-3">
