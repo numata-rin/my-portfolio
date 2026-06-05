@@ -70,31 +70,6 @@ export const profile = {
     "DB設計",
     "PostgreSQL",
   ],
-  works: [
-    {
-      title: "Study Tasks Manager",
-      description: "学習タスクを管理するWebアプリ。",
-      techs: ["React", "TypeScript", "Vite", "HTML / CSS"],
-      url: null as string | null,
-      github: null as string | null,
-    },
-    {
-      title: "麻雀点数計算アプリ",
-      description:
-        "麻雀の点数計算を行うWebアプリ。大学の授業でグループ開発し、PM役として進行・調整を担当。",
-      techs: ["Python", "Django", "JavaScript", "HTML / CSS"],
-      url: null as string | null,
-      github: null as string | null,
-    },
-    {
-      title: "my-portfolio",
-      description:
-        "自分用のポートフォリオサイトとして作成したアプリ。Claude Code を使用して開発。",
-      techs: ["Python", "Django", "JavaScript", "HTML / CSS"],
-      url: null as string | null,
-      github: null as string | null,
-    },
-  ],
   education: [
     {
       institution: "国立大学法人 岩手大学",

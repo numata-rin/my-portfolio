@@ -1,63 +1,52 @@
 import type { Metadata } from "next";
-import { profile } from "@/app/lib/profile";
+import { works } from "@/app/lib/works";
+import WorkCard from "@/app/components/WorkCard";
 
 export const metadata: Metadata = {
   title: "Works",
 };
 
 export default function WorksPage() {
+  const activeWorks = works.filter((w) => w.status !== "Planned");
+  const plannedWorks = works.filter((w) => w.status === "Planned");
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-20">
-      <h1 className="fade-in text-3xl font-bold mb-12">Works</h1>
+      <h1 className="fade-in text-3xl font-bold mb-4">Works</h1>
 
-      <div className="space-y-0">
-        {profile.works.map((work, i) => (
-          <article
-            key={work.title}
-            className={`fade-in-${i + 1} border-t border-gray-100 py-10`}
-          >
-            <h2 className="text-xl font-semibold mb-3">{work.title}</h2>
-            <p className="text-gray-600 leading-relaxed mb-5">
-              {work.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-5">
-              {work.techs.map((tech) => (
-                <span
-                  key={tech}
-                  className="text-xs text-gray-500 bg-gray-50 px-2.5 py-1 border border-gray-100"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            {(work.url || work.github) && (
-              <div className="flex gap-5">
-                {work.url && (
-                  <a
-                    href={work.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm underline underline-offset-4 text-gray-700 hover:text-black"
-                  >
-                    サイトを見る ↗
-                  </a>
-                )}
-                {work.github && (
-                  <a
-                    href={work.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm underline underline-offset-4 text-gray-700 hover:text-black"
-                  >
-                    GitHub ↗
-                  </a>
-                )}
-              </div>
-            )}
-          </article>
-        ))}
-        <div className="border-t border-gray-100" />
+      <div className="fade-in-1 space-y-2 text-sm text-gray-500 leading-relaxed mb-14">
+        <p>
+          個人開発、授業でのグループ開発、学内カンパニーでの活動を通して制作したWebアプリやプロトタイプをまとめています。
+        </p>
+        <p>
+          各制作物では、使用技術だけでなく、開発背景・主な機能・担当範囲・工夫した点・今後の改善予定も整理しています。
+        </p>
       </div>
+
+      {/* メイン制作物 */}
+      <div className="fade-in-2 space-y-4 mb-16">
+        {activeWorks.map((work, i) => (
+          <WorkCard
+            key={work.slug}
+            work={work}
+            animationClass={`fade-in-${i + 2}`}
+          />
+        ))}
+      </div>
+
+      {/* 現在制作中 */}
+      {plannedWorks.length > 0 && (
+        <div className="fade-in-4">
+          <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-5 pb-3 border-b border-gray-300">
+            現在制作中
+          </h2>
+          <div className="space-y-3">
+            {plannedWorks.map((work) => (
+              <WorkCard key={work.slug} work={work} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
