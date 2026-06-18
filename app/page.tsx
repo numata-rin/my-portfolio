@@ -29,12 +29,6 @@ export default function Home() {
           </div>
           <div className="fade-in-4 flex flex-wrap gap-4 mb-8">
             <Link
-              href="/works"
-              className="inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
-            >
-              制作物を見る ↗
-            </Link>
-            <Link
               href="/about"
               className="inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
             >
@@ -47,19 +41,23 @@ export default function Home() {
               スキルを見る ↗
             </Link>
             <Link
+              href="/works"
+              className="inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
+            >
+              制作物を見る ↗
+            </Link>
+            <Link
               href="/experience"
               className="inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
             >
               経歴を見る ↗
             </Link>
-            <a
-              href={profile.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors"
             >
-              GitHub を見る ↗
-            </a>
+              問い合わせ先を見る ↗
+            </Link>
           </div>
         </div>
       </div>
