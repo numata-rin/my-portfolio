@@ -28,7 +28,7 @@ export default function WorkCard({ work, animationClass }: Props) {
   const displayFeatures = work.features?.slice(0, 3) ?? [];
 
   return (
-    <article className={`${animationClass ?? ""} border border-gray-300 flex items-center gap-4 p-4 min-h-[165px]`}>
+    <article className={`${animationClass ?? ""} border border-gray-300 flex items-center gap-4 p-4 min-h-[10.3rem]`}>
       {/* サムネイル - 正方形 */}
       <div className="w-28 h-28 shrink-0 bg-gray-50 border border-gray-100 flex items-center justify-center">
         {work.image ? (
@@ -44,7 +44,7 @@ export default function WorkCard({ work, animationClass }: Props) {
       </div>
 
       {/* コンテンツ */}
-      <div className="flex-1 flex flex-col justify-between min-h-[133px]">
+      <div className="flex-1 flex flex-col justify-between min-h-[8.3rem]">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <span

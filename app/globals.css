@@ -5,6 +5,11 @@
   --foreground: #111111;
 }
 
+/* 全体を画面拡大率110%相当のサイズに。Tailwindのrem基準の文字・余白がまとめてスケールする */
+html {
+  font-size: 110%;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
