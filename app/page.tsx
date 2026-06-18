@@ -20,7 +20,7 @@ export default function Home() {
           <p className="fade-in-3 text-base text-gray-700 font-medium leading-relaxed mb-3">
             {profile.catchCopy}
           </p>
-          <div className="fade-in-3 space-y-2 mb-6">
+          <div className="fade-in-3 space-y-2 mb-10">
             {profile.heroBio.map((para, i) => (
               <p key={i} className="text-sm text-gray-500 leading-relaxed max-w-xl">
                 {para}

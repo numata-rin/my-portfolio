@@ -43,7 +43,7 @@ export default function AboutPage() {
                 },
                 {
                   title: "AI活用力",
-                  description: "AIに任せる作業や任せ方、指示のプロンプトなどについて日々試行錯誤しています。",
+                  description: "AIに任せる作業や任せ方、指示のプロンプトなどについて日々試行錯誤しています。\nまた、進化が"
                 },
                 {
                   title: "コミュニケーション力",
@@ -90,27 +90,6 @@ export default function AboutPage() {
             <p>現在はその土台として、上記の3つの活動を行っています。</p>
           </div>
         </section>
-
-        {/* GitHub */}
-        <div className="fade-in-4 pt-10">
-          <dl>
-            <div className="flex gap-8">
-              <dt className="text-sm text-gray-800 tracking-widest uppercase font-medium w-24 shrink-0 pt-0.5">
-                GitHub
-              </dt>
-              <dd>
-                <a
-                  href={profile.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm hover:underline underline-offset-4"
-                >
-                  @{profile.github}
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
       </div>
     </div>
   );
