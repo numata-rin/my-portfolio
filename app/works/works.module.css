@@ -1,0 +1,25 @@
+@reference "../globals.css";
+
+.container {
+  @apply max-w-3xl mx-auto px-6 py-20;
+}
+
+.title {
+  @apply text-3xl font-bold mb-4;
+}
+
+.intro {
+  @apply space-y-2 text-sm text-gray-500 leading-relaxed mb-14;
+}
+
+.mainWorks {
+  @apply space-y-4 mb-16;
+}
+
+.sectionTitle {
+  @apply text-sm text-gray-800 tracking-widest uppercase font-medium mb-5 pb-3 border-b border-gray-300;
+}
+
+.plannedList {
+  @apply space-y-3;
+}

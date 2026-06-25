@@ -100,22 +100,24 @@ export default function WorkCard({ work, animationClass }: Props) {
               GitHub ↗
             </a>
           )}
-          {work.demoUrl && (
-            <a
-              href={work.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs underline underline-offset-4 text-gray-700 hover:text-black transition-colors"
+          <div className="flex items-center gap-2 ml-auto">
+            {work.demoUrl && (
+              <a
+                href={work.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium bg-black text-white hover:bg-gray-800 transition-colors"
+              >
+                アプリを見る
+              </a>
+            )}
+            <Link
+              href={`/works/${work.slug}`}
+              className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium bg-black text-white hover:bg-gray-800 transition-colors"
             >
-              Demo ↗
-            </a>
-          )}
-          <Link
-            href={`/works/${work.slug}`}
-            className="text-xs text-gray-500 hover:text-black transition-colors ml-auto"
-          >
-            詳細を見る →
-          </Link>
+              詳細を見る
+            </Link>
+          </div>
         </div>
       </div>
     </article>

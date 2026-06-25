@@ -1,0 +1,73 @@
+@reference "../globals.css";
+
+.container {
+  @apply max-w-3xl mx-auto px-6 py-20;
+}
+
+.title {
+  @apply text-3xl font-bold mb-4;
+}
+
+.intro {
+  @apply space-y-3 text-sm text-gray-500 leading-relaxed mb-12;
+}
+
+.links {
+  @apply space-y-3 mb-14;
+}
+
+.link {
+  @apply flex items-center gap-6 p-4 border border-gray-100 hover:border-gray-300 transition-colors;
+}
+
+.linkLabel {
+  @apply text-sm font-medium w-24 shrink-0 text-gray-400 transition-colors;
+}
+
+.link:hover .linkLabel {
+  @apply text-black;
+}
+
+.linkValue {
+  @apply text-sm text-gray-600 transition-colors;
+}
+
+.link:hover .linkValue {
+  @apply text-black;
+}
+
+.linkArrow {
+  @apply ml-auto text-gray-300 transition-colors text-sm;
+}
+
+.link:hover .linkArrow {
+  @apply text-black;
+}
+
+.topics {
+  @apply mb-14;
+}
+
+.sectionTitle {
+  @apply text-sm text-gray-800 tracking-widest uppercase font-medium mb-5 pb-3 border-b border-gray-300;
+}
+
+.topicList {
+  @apply space-y-3;
+}
+
+.topicItem {
+  @apply flex items-start gap-3;
+}
+
+.topicBullet {
+  @apply mt-1.5 w-1.5 h-1.5 bg-gray-300 rounded-full shrink-0;
+}
+
+.topicText {
+  @apply text-sm text-gray-600;
+}
+
+.cta {
+  @apply inline-flex items-center px-5 py-2.5 bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors;
+}

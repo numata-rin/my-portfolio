@@ -8,6 +8,7 @@ import {
   SiNotion, SiClaude, SiPostgresql, SiScikitlearn,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
+import styles from "./skills.module.css";
 
 const skillColors: Record<string, string> = {
   "React": "#61DAFB",
@@ -69,11 +70,8 @@ function SkillTags({ items, textClass }: { items: string[]; textClass: string })
       {sorted.map((skill) => {
         const Icon = skillIcons[skill];
         return (
-          <span
-            key={skill}
-            className={`inline-flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-200 ${textClass}`}
-          >
-            {Icon && <Icon size={16} color={skillColors[skill]} className="shrink-0" />}
+          <span key={skill} className={`${styles.tag} ${textClass}`}>
+            {Icon && <Icon size={16} color={skillColors[skill]} className={styles.icon} />}
             {skill}
           </span>
         );
@@ -84,35 +82,29 @@ function SkillTags({ items, textClass }: { items: string[]; textClass: string })
 
 export default function SkillsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-20">
-      <h1 className="fade-in text-3xl font-bold mb-12">Skills</h1>
+    <div className={styles.container}>
+      <h1 className={`fade-in ${styles.title}`}>Skills</h1>
 
-      <div className="space-y-10">
+      <div className={styles.groups}>
         {profile.skills.map((group, i) => (
           <div key={group.category} className={`fade-in-${i + 1}`}>
-            <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-300">
-              {group.category}
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              <SkillTags items={group.items} textClass="text-gray-700" />
+            <h2 className={styles.sectionTitle}>{group.category}</h2>
+            <div className={styles.tags}>
+              <SkillTags items={group.items} textClass={styles.tagDark} />
             </div>
             {group.description && (
-              <p className="mt-4 text-sm text-gray-500 leading-relaxed whitespace-pre-line">
-                {group.description}
-              </p>
+              <p className={styles.groupDesc}>{group.description}</p>
             )}
           </div>
         ))}
 
         {/* Currently Learning */}
         <div className={`fade-in-${profile.skills.length + 1}`}>
-          <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-300">
-            現在学習中
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            <SkillTags items={profile.currentlyLearning} textClass="text-gray-500" />
+          <h2 className={styles.sectionTitle}>現在学習中</h2>
+          <div className={styles.tags}>
+            <SkillTags items={profile.currentlyLearning} textClass={styles.tagMuted} />
           </div>
-          <p className="mt-4 text-sm text-gray-500 leading-relaxed">
+          <p className={styles.learningDesc}>
             現在は、React / Next.js と Django REST Framework を組み合わせたAPI連携型のWebアプリ開発を重点的に学習しています。{"\n"}今後は、認証機能、DB設計、API設計、データ分析、推薦システムなどを深めていきたいと考えています。
           </p>
         </div>

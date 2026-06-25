@@ -34,11 +34,11 @@ export const profile = {
   ],
   github: "numata-rin",
   githubUrl: "https://github.com/numata-rin",
-  email: "your-email@example.com",
+  email: "numata.rin.1013@gmail.com",
   sns: [
-    { label: "X", displayText: "@username", url: "https://x.com/username" },
-    { label: "Wantedly", displayText: "@username", url: "https://www.wantedly.com/id/username" },
-    { label: "Zenn", displayText: "@username", url: "https://zenn.dev/username" },
+    { label: "X", displayText: "沼田 倫", url: "https://x.com/rin_Stengineer" },
+    { label: "Wantedly", displayText: "@numata-rin", url: "https://www.wantedly.com/id/numata-rin" },
+    { label: "Zenn", displayText: "@numata-rin", url: "https://zenn.dev/numata-rin" },
   ],
   skills: [
     {

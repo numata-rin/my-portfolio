@@ -17,6 +17,9 @@ export type Work = {
 };
 
 export const works: Work[] = [
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     slug: "study-tasks-manager",
     title: "Study Tasks Manager",
@@ -38,10 +41,13 @@ export const works: Work[] = [
     futureImprovements:
       "今後は、Django REST FrameworkやNext.jsと連携し、ログイン機能・DB保存・学習履歴の分析機能を追加する予定です。将来的には、情報推薦・行動支援の考え方を取り入れ、ユーザーの学習状況や目標に応じて次に取り組むべきタスクを提案できるアプリへ発展させたいと考えています。",
     githubUrl: null,
-    demoUrl: null,
-    image: null,
+    demoUrl: "https://study-task-manager-roan.vercel.app/",
+    image: "/works-images/STM-image.png",
     status: "Completed",
   },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     slug: "mahjong-score-calculator",
     title: "麻雀点数計算アプリ",
@@ -64,10 +70,13 @@ export const works: Work[] = [
     futureImprovements:
       "入力フォームの使いやすさ向上・点数計算ロジックの精度向上・エラーハンドリングの整理・Ajaxを用いた非同期での計算結果表示などを行いたいです。また、テストコードを追加し、複雑な条件でも安定して点数計算できるように改善したいです。",
     githubUrl: null,
-    demoUrl: null,
-    image: null,
+    demoUrl: "https://msc-a8rz.onrender.com/",
+    image: "/works-images/MSC-image.png",
     status: "Completed",
   },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     slug: "my-portfolio",
     title: "my-portfolio",
@@ -88,33 +97,39 @@ export const works: Work[] = [
     futureImprovements:
       "今後は各制作物の詳細ページを充実させ、ResearchページやBlog / Notesページを追加することで研究関心や学習記録を整理して発信できるようにしたいと考えています。",
     githubUrl: null,
-    demoUrl: null,
-    image: null,
+    demoUrl: "https://my-portfolio-gamma-six-ku1s8in6o8.vercel.app/",
+    image: "/works-images/portfolio-image.png",
     status: "In Progress",
   },
-  {
-    slug: "campus-company-prototype",
-    title: "学内カンパニー プロトタイプ開発",
-    shortDescription:
-      "大学の学内カンパニーで、商品に関連するWebアプリのプロトタイプ開発に取り組んでいます。",
-    background:
-      "学内カンパニーiFiveの活動として、クライアント向けデモを想定したWebアプリのプロトタイプを制作しています。公開可能な範囲で担当内容や使用技術を掲載しています。",
-    features: [
-      "クライアント向けデモ画面の実装",
-      "状態に応じた表示切り替え",
-      "モックデータを用いた動作確認",
-    ],
-    techStack: ["Next.js", "React", "TypeScript", "GitHub", "Vercel"],
-    role: "要件整理・画面構成の検討・UI実装・状態管理・GitHubでの管理を担当しました。",
-    points:
-      "プロトタイプとして短期間で価値が伝わるよう、画面構成をシンプルにし、状態の変化が視覚的に分かりやすいように設計しました。実データがない段階でもデモとして動作確認できるよう、モックデータを用いた表示切り替えを実装しました。",
-    futureImprovements:
-      "今後は実際の要件やフィードバックに合わせて、UI改善・データ構造の整理・API連携・管理画面の追加などを検討しています。",
-    githubUrl: null,
-    demoUrl: null,
-    image: null,
-    status: "Prototype",
-  },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // {
+  //   slug: "campus-company-prototype",
+  //   title: "学内カンパニー プロトタイプ開発",
+  //   shortDescription:
+  //     "大学の学内カンパニーで、商品に関連するWebアプリのプロトタイプ開発に取り組んでいます。",
+  //   background:
+  //     "学内カンパニーiFiveの活動として、クライアント向けデモを想定したWebアプリのプロトタイプを制作しています。公開可能な範囲で担当内容や使用技術を掲載しています。",
+  //   features: [
+  //     "クライアント向けデモ画面の実装",
+  //     "状態に応じた表示切り替え",
+  //     "モックデータを用いた動作確認",
+  //   ],
+  //   techStack: ["Next.js", "React", "TypeScript", "GitHub", "Vercel"],
+  //   role: "要件整理・画面構成の検討・UI実装・状態管理・GitHubでの管理を担当しました。",
+  //   points:
+  //     "プロトタイプとして短期間で価値が伝わるよう、画面構成をシンプルにし、状態の変化が視覚的に分かりやすいように設計しました。実データがない段階でもデモとして動作確認できるよう、モックデータを用いた表示切り替えを実装しました。",
+  //   futureImprovements:
+  //     "今後は実際の要件やフィードバックに合わせて、UI改善・データ構造の整理・API連携・管理画面の追加などを検討しています。",
+  //   githubUrl: null,
+  //   demoUrl: null,
+  //   image: null,
+  //   status: "Prototype",
+  // },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     slug: "research-note-manager",
     title: "研究メモ・論文管理アプリ",
@@ -134,6 +149,9 @@ export const works: Work[] = [
     image: null,
     status: "Planned",
   },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   {
     slug: "study-tasks-manager-v2",
     title: "API連携版 Study Tasks Manager",
