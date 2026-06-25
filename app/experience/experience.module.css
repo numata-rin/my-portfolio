@@ -1,0 +1,57 @@
+@reference "../globals.css";
+
+.container {
+  @apply max-w-3xl mx-auto px-6 py-20;
+}
+
+.title {
+  @apply text-3xl font-bold mb-12;
+}
+
+.section {
+  @apply mb-20;
+}
+
+.sectionTitle {
+  @apply text-sm text-gray-800 tracking-widest uppercase font-medium mb-6 pb-3 border-b border-gray-300;
+}
+
+.timeline {
+  @apply space-y-6;
+}
+
+.entry {
+  @apply border-l-2 border-gray-200 pl-5;
+}
+
+.period {
+  @apply text-xs text-gray-400 mb-1;
+}
+
+.heading {
+  @apply font-medium;
+}
+
+.subText {
+  @apply text-sm text-gray-500 mt-0.5;
+}
+
+.description {
+  @apply text-sm text-gray-600 mt-1.5;
+}
+
+.qualList {
+  @apply space-y-3;
+}
+
+.qualItem {
+  @apply flex items-center gap-3;
+}
+
+.qualBullet {
+  @apply w-1 h-1 bg-gray-300 rounded-full shrink-0;
+}
+
+.qualText {
+  @apply text-sm text-gray-700;
+}

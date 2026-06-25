@@ -71,7 +71,7 @@ export default async function WorkDetailPage({
             <img
               src={work.image}
               alt={work.title}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
           ) : (
             <span className="text-sm text-gray-300 select-none">No Image</span>
@@ -156,35 +156,18 @@ export default async function WorkDetailPage({
           </section>
         )}
 
-        {/* リンク */}
-        {(work.githubUrl || work.demoUrl) && (
-          <section>
-            <h2 className="text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-200">
-              Links
-            </h2>
-            <div className="flex gap-5">
-              {work.githubUrl && (
-                <a
-                  href={work.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm underline underline-offset-4 text-gray-700 hover:text-black transition-colors"
-                >
-                  GitHub ↗
-                </a>
-              )}
-              {work.demoUrl && (
-                <a
-                  href={work.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm underline underline-offset-4 text-gray-700 hover:text-black transition-colors"
-                >
-                  Demo ↗
-                </a>
-              )}
-            </div>
-          </section>
+        {/* アプリを見る */}
+        {work.demoUrl && (
+          <div className="flex justify-center pt-6">
+            <a
+              href={work.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-8 py-3.5 text-base font-medium bg-black text-white hover:bg-gray-800 transition-colors"
+            >
+              アプリを見る
+            </a>
+          </div>
         )}
       </div>
 

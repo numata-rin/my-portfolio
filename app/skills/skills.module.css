@@ -1,0 +1,45 @@
+@reference "../globals.css";
+
+.container {
+  @apply max-w-3xl mx-auto px-6 py-20;
+}
+
+.title {
+  @apply text-3xl font-bold mb-12;
+}
+
+.groups {
+  @apply space-y-10;
+}
+
+.sectionTitle {
+  @apply text-sm text-gray-800 tracking-widest uppercase font-medium mb-4 pb-3 border-b border-gray-300;
+}
+
+.tags {
+  @apply flex flex-wrap gap-2;
+}
+
+.tag {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 text-sm border border-gray-200;
+}
+
+.tagDark {
+  @apply text-gray-700;
+}
+
+.tagMuted {
+  @apply text-gray-500;
+}
+
+.icon {
+  @apply shrink-0;
+}
+
+.groupDesc {
+  @apply mt-4 text-sm text-gray-500 leading-relaxed whitespace-pre-line;
+}
+
+.learningDesc {
+  @apply mt-4 text-sm text-gray-500 leading-relaxed;
+}
